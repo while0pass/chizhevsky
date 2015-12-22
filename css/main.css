@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Lora;
+    src: url("../fonts/Lora-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: Lora;
+    src: url("../fonts/Lora-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: Lora;
+    src: url("../fonts/Lora-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: Lora;
+    src: url("../fonts/Lora-BoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #927a5a;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    -webkit-user-select: none;
+    cursor: default;
+    font-family: Lora;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+}
+
+nav.main {
+    margin: 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+nav.main a {
+    flex: 0 1 30rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #927a5a;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+/*
+nav.main a:nth-of-type(3) {
+    margin-left: -2rem;
+}
+*/
+
+nav.main figure img:hover {
+    transform: rotate(-1deg);
+    transition: all 0.2s ease-in-out;
+}
+
+nav.main figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 0.7rem solid white;
+    box-shadow: 0.3rem 0.3rem 2rem #927a5a;
+    transition: all 0.2s ease-in-out;
+}
+
+nav.main figure figcaption {
+    display: block;
+    margin: 1rem 0 3rem;
+    text-align: center;
+}
+
+a.back {
+    position: absolute;
+    bottom: 14rem;
+    width: 37rem;
+    right: 0;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    padding-left: 2rem;
+    text-decoration: none;
+    font-style: italic;
+    letter-spacing: 0.01rem;
+    color: rgba(146, 122, 90, 0.7);
+}
+
+.text{
+    position: absolute;
+    top: 1.5rem;
+    bottom: 18rem;
+    right: 0;
+    width: 37rem;
+    overflow: auto;
+    color: #705838;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0 2rem;
+}
+.text:after{
+    content: " ";
+    display: block;
+    position: fixed;
+    width: 37rem;
+    bottom: 16rem;
+    right: 0;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.text:before{
+    content: " ";
+    display: block;
+    position: fixed;
+    width: 37rem;
+    top: 0;
+    right: 0;
+    height: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.text blockquote.verses{
+    white-space: pre-line;
+    font-style: italic;
+    color: #913c52;
+    font-size: 0.95rem;
+}
+
+.text h1 {
+    margin-top: 0rem;
+}
+
+.carouselle{
+    position: absolute;
+    width: 100%;
+    height: 14rem;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+.carouselle div img {
+    height: 12.6rem;
+    display: block;
+    margin-right: 0.7rem;
+}
+
+.large-photo{
+    position: absolute;
+    top: 2.1rem;
+    left: 0.7rem;
+    right: 37.7rem;
+    bottom: 14rem;
+    width: auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    box-shadow: inset 0 0 0 0.7rem white;
+}
+.large-photo:after{
+    content: " ";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5rem;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
