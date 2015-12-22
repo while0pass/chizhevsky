@@ -1,6 +1,17 @@
 $(document).ready(function () {
-    var url = 'url(' + $('.carouselle img').first().attr('src') + ')';
-    $('.large-photo').css('background-image', url);
+    var url = $('.carouselle img').first().attr('src'),
+        replacePhoto = function (url) {
+            var img = $('.large-photo img');
+            img.attr('src', url);
+            if (img.width() > img.height()) {
+                img.css('width', '100%');
+                img.css('height', 'auto');
+            } else {
+                img.css('width', 'auto');
+                img.css('height', '100%');
+            }
+        };
+    replacePhoto(url);
 
     $('.carouselle').slick({
         slidesToShow: 5,
@@ -18,13 +29,11 @@ $(document).ready(function () {
     });
 
     $('.carouselle img').click(function () {
-        var url = 'url(' + this.src + ')';
-        $('.large-photo').css('background-image', url);
+        replacePhoto(this.src);
     });
 
-    $('.large-photo').click(function () {
-        var i, images = [],
-            url = $(this).css('background-image').slice(5, -2);
+    $('.large-photo img').click(function () {
+        var i, images = [], url = this.src;
         $('.carouselle img').each(function (index) {
             if (images.indexOf(this.src) == -1) images.push(this.src);
         });

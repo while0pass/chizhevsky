@@ -1716,9 +1716,9 @@ $.magnificPopup.registerModule('gallery', {
 		navigateByImgClick: true,
 		arrows: true,
 
-		tPrev: 'Previous (Left arrow key)',
-		tNext: 'Next (Right arrow key)',
-		tCounter: '%curr% of %total%'
+		tPrev: 'Предыдущая фотография (Кнопка влево)',
+		tNext: 'Следующая фотография (Кнопка вправо)',
+		tCounter: '%curr% из %total%'
 	},
 
 	proto: {
@@ -1870,58 +1870,6 @@ $.magnificPopup.registerModule('gallery', {
 	}
 });
 
-/*
-Touch Support that might be implemented some day
-
-addSwipeGesture: function() {
-	var startX,
-		moved,
-		multipleTouches;
-
-		return;
-
-	var namespace = '.mfp',
-		addEventNames = function(pref, down, move, up, cancel) {
-			mfp._tStart = pref + down + namespace;
-			mfp._tMove = pref + move + namespace;
-			mfp._tEnd = pref + up + namespace;
-			mfp._tCancel = pref + cancel + namespace;
-		};
-
-	if(window.navigator.msPointerEnabled) {
-		addEventNames('MSPointer', 'Down', 'Move', 'Up', 'Cancel');
-	} else if('ontouchstart' in window) {
-		addEventNames('touch', 'start', 'move', 'end', 'cancel');
-	} else {
-		return;
-	}
-	_window.on(mfp._tStart, function(e) {
-		var oE = e.originalEvent;
-		multipleTouches = moved = false;
-		startX = oE.pageX || oE.changedTouches[0].pageX;
-	}).on(mfp._tMove, function(e) {
-		if(e.originalEvent.touches.length > 1) {
-			multipleTouches = e.originalEvent.touches.length;
-		} else {
-			//e.preventDefault();
-			moved = true;
-		}
-	}).on(mfp._tEnd + ' ' + mfp._tCancel, function(e) {
-		if(moved && !multipleTouches) {
-			var oE = e.originalEvent,
-				diff = startX - (oE.pageX || oE.changedTouches[0].pageX);
-
-			if(diff > 20) {
-				mfp.next();
-			} else if(diff < -20) {
-				mfp.prev();
-			}
-		}
-	});
-},
-*/
-
-
 /*>>gallery*/
 
 /*>>retina*/
@@ -1964,24 +1912,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /*>>retina*/
 
 /*>>fastclick*/
-/**
- * FastClick event implementation. (removes 300ms delay on touch devices)
- * Based on https://developers.google.com/mobile/articles/fast_buttons
- *
- * You may use it outside the Magnific Popup by calling just:
- *
- * $('.your-el').mfpFastClick(function() {
- *     console.log('Clicked!');
- * });
- *
- * To unbind:
- * $('.your-el').destroyMfpFastClick();
- * 
- * 
- * Note that it's a very basic and simple implementation, it blocks ghost click on the same element where it was bound.
- * If you need something more advanced, use plugin by FT Labs https://github.com/ftlabs/fastclick
- * 
- */
 
 (function() {
 	var ghostClickDelay = 1000,
