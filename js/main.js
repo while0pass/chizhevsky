@@ -50,4 +50,8 @@ $(document).ready(function () {
             type: 'image'
         });
     });
+
+    $(window).resize(function () {
+        document.location.reload(true);
+    });
 });
