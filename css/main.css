@@ -180,8 +180,6 @@ nav.main figure figcaption {
 a.back {
     position: absolute;
     bottom: calc(20vh + 2rem);
-    width: 37rem;
-    right: 0;
     height: 2rem;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
@@ -195,37 +193,88 @@ a.back {
     color: rgba(146, 122, 90, 0.7);
 }
 
-.text{
+.text {
     position: absolute;
     top: 1.5rem;
     bottom: calc(20vh + 6rem);
-    right: 0;
-    width: 37rem;
     overflow: auto;
     color: #705838;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 0 2rem;
 }
-.text:after{
+
+.text:after {
     content: " ";
     display: block;
     position: fixed;
-    width: 37rem;
     bottom: calc(20vh + 4rem);
-    right: 0;
     height: 2rem;
     background-color: rgba(255, 255, 255, 0.4);
 }
-.text:before{
+
+.text:before {
     content: " ";
     display: block;
     position: fixed;
-    width: 37rem;
     top: 0;
-    right: 0;
     height: 1.5rem;
     background-color: rgba(255, 255, 255, 0.4);
 }
+
+.large-photo {
+    position: absolute;
+    top: 2.1rem;
+    left: 0.7rem;
+    bottom: calc(20vh + 2rem);
+}
+
+.large-photo img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    border: 0.7rem solid rgba(255, 255, 255, 0.7);
+}
+
+.large-photo:hover:after {
+    content: " ";
+    width: 2rem;
+    height: 2rem;
+    background: url(../img/zoom.png) 50% 50% / 100% 100% no-repeat;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 200;
+}
+
+a.back,
+.text,
+.text:after,
+.text:before {
+    right: calc(40vw - 37rem);
+    width: 37rem;
+}
+
+.large-photo {
+    right: calc(40vw + 0.7rem);
+}
+
+@media (max-width: 74rem),
+       (min-aspect-ratio: 1/1) and (max-aspect-ratio: 16/11) {
+
+    a.back,
+    .text,
+    .text:after,
+    .text:before {
+        right: 0;
+        width: 50vw;
+    }
+
+    .large-photo {
+        right: calc(50vw + 0.7rem);
+    }
+}
+
 
 .text blockquote.verses{
     white-space: pre-line;
@@ -254,33 +303,6 @@ a.back {
     height: calc(20vh - 1.4rem);
     display: block;
     margin-right: 0.7rem;
-}
-
-.large-photo {
-    position: absolute;
-    top: 2.1rem;
-    left: 0.7rem;
-    right: 37.7rem;
-    bottom: calc(20vh + 2rem);
-}
-
-.large-photo img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    border: 0.7rem solid rgba(255, 255, 255, 0.7);
-}
-
-.large-photo:hover:after {
-    content: " ";
-    width: 2rem;
-    height: 2rem;
-    background: url(../img/zoom.png) 50% 50% / 100% 100% no-repeat;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 200;
 }
 
 
