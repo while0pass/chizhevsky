@@ -1,9 +1,14 @@
 $(document).ready(function () {
     var url = $('.carouselle img').first().attr('src'),
         replacePhoto = function (url) {
-            var img = $('.large-photo img');
+            var img = $('.large-photo img').first(),
+                container = $('.large-photo').first();
             img.attr('src', url);
-            if (img.width() > img.height()) {
+            var iw = img.width(),
+                ih = img.height(),
+                cw = container.width(),
+                ch = container.height();
+            if (iw/ih > cw/ch) {
                 img.css('width', '100%');
                 img.css('height', 'auto');
             } else {
